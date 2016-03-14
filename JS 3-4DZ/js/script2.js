@@ -1,3 +1,0 @@
-var createTest = {
-	var obj = {}
-}

@@ -1,4 +1,5 @@
 'use strict'
+
 // Template
 var TQuestion={
 	q:"Question",
@@ -45,7 +46,17 @@ var QBase=[];
 	}
 	QBase.push(q);
 
-// alert(QBase[1].a.length);
+	//Пример проявления динаических свойств генерации теста
+
+	// Question 4
+	// var q = {
+	// 	q:"Question 4",
+	// 	a:[
+	// 	"Answer 41",
+	// 	"Answer 42"
+	// 	]
+	// }
+	// QBase.push(q);
 
 var createTest = {
 	createWrapper: function() {
@@ -64,7 +75,6 @@ var createTest = {
   	},
   	createOl: function(){
   		var questionsOl = document.createElement('ol');
-  		questionsOl.type = "1";
   		document.querySelector('form').appendChild(questionsOl);
   	},
   	createQuestion: function(textArea){
@@ -76,17 +86,22 @@ var createTest = {
   		question.innerHTML = textArea;
   	},
   	createAnswer: function(answerTextArea){
-		var answerTextArea;
+  		var answerTextArea;
+  		var label = document.createElement('label');
+  		label.id = 'idA' + i + j;
+  		label.innerHTML = answerTextArea;
+		document.getElementById('id' + i).appendChild(label);
 		var answer = document.createElement('input');
 		answer.type = "checkbox";
 		answer.name = "name";
 		answer.value = "value";
-		answer.id = 'idA' + i + j;
-		document.getElementById('id' + i).appendChild(answer);
-		var label = document.createElement('label');
-		label.htmlFor = 'idA' + i + j;
-		document.getElementById('idA' + i + j).appendChild(label);
-		label.innerHTML = answerTextArea;
+		document.getElementById('idA' + i + j).appendChild(answer);
+  	},
+  	createButton: function(){
+  		var submitButton = document.createElement('button');
+  		submitButton.type = 'submit';
+  		submitButton.innerHTML = 'Проверить мои результаты'; 
+  		document.querySelector('form').appendChild(submitButton);
   	}
 }
 
@@ -96,9 +111,8 @@ createTest.createTitle();
 createTest.createOl();
 for(var i = 0; i < QBase.length ; i++ ){
 	createTest.createQuestion(QBase[i].q);
-	// alert('Создан вопрос');
 	for( var j = 0; j < QBase[i].a.length; j++ ){
 		createTest.createAnswer(QBase[i].a[j]);
-		// alert('Создан ответ');
 	}
 }
+createTest.createButton();
