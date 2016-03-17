@@ -48,7 +48,7 @@ var QBase=[];
 
 	//Пример проявления динаических свойств генерации теста
 
-	// Question 4
+	//Question 4
 	// var q = {
 	// 	q:"Question 4",
 	// 	a:[
@@ -93,8 +93,6 @@ var createTest = {
 		document.getElementById('id' + i).appendChild(label);
 		var answer = document.createElement('input');
 		answer.type = "checkbox";
-		answer.name = "name";
-		answer.value = "value";
 		document.getElementById('idA' + i + j).appendChild(answer);
   	},
   	createButton: function(){
