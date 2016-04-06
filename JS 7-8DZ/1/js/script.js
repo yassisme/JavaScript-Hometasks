@@ -1,5 +1,4 @@
 'use strict'
-
 var $tab = jQuery.noConflict();
 $tab(document).ready(function() {
 	$tab('ul.tabs li').css('cursor', 'pointer');
