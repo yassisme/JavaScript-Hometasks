@@ -1,7 +1,7 @@
 $(function(){
 
 	$('div.carousel').slider({
-		buttonColor: '#aaa',
+		buttonColor: 'blue',
 		buttonFontFamily: 'Arial'
 	});
 
