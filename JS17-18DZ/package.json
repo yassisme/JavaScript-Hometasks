@@ -1,0 +1,10 @@
+{
+  "name": "MyGruntProject",
+  "version": "6.6.6",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1",
+    "gulp-concat-css": "^2.2.0"
+  }
+}
