@@ -20,11 +20,23 @@ module.exports = function(grunt) {
 		        src: 'js/GruntFiles/grunt.main.js',
 		        dest: 'js/GruntFiles/grunt.min.js'
 		    }
-  		}
+  		},
+  		cssmin: {
+		  options: {
+		    shorthandCompacting: false,
+		    roundingPrecision: -1
+		  },
+		  target: {
+		    files: {
+		      'css/GruntCSS/grunt.style.min.css': ['css/GruntCSS/grunt.style.css']
+		    }
+		  }
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-	grunt.registerTask('default', ['concat','uglify']);
+	grunt.registerTask('default', ['concat','uglify','cssmin']);
 };
